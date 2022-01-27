@@ -1,0 +1,402 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.all {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+
+@media (max-width: 500px) {
+  .all {
+    width: 400px;
+    height: 250px;
+  }
+}
+
+.background {
+  position: absolute;
+  width: 100vw;
+}
+
+.head,
+.hairInner,
+.hairOut,
+.eyes,
+.nose,
+.mouthB,
+.beard,
+.scarf,
+.ringTop,
+.ringBelow,
+.bar,
+.circle {
+  position: absolute;
+}
+
+.head {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 69%;
+  height: 90%;
+  overflow: hidden;
+  border-color: green;
+  border: none;
+}
+
+.hairOut {
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+}
+
+.hairInner {
+  right: 0;
+  bottom: 0;
+}
+
+.eyes {
+  top: 10%;
+  left: 50%;
+  width: 32%;
+  height: 33%;
+  transform: translateX(-50%);
+  border: none;
+}
+
+.eye-left {
+  transform: rotate(7deg);
+}
+
+.eye-right {
+  right: 0;
+  transform: rotate(-7deg);
+}
+
+.blackLeft,
+.blackRight {
+  position: absolute;
+  top: 39%;
+}
+
+.blackLeft {
+  right: 11%;
+  transform: rotate(-7deg);
+}
+
+.blackRight {
+  left: 11%;
+  transform: rotate(7deg);
+}
+
+.blackLeft::before,
+.blackRight::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15%;
+  /* border: 2px solid; */
+  border-radius: 50%;
+  background-color: white;
+}
+
+.blackLeft::before {
+  right: 0;
+}
+
+.blackRight::before {
+  left: 0;
+}
+
+.nose,
+.nose::before {
+  border-radius: 50%;
+}
+
+.nose {
+  top: 33%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nose::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 15%;
+  left: 18%;
+}
+
+.faceLeft,
+.faceRight {
+  position: absolute;
+  top: 55%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(223, 48, 48, 1) 0%,
+    rgba(230, 71, 71, 1) 28%,
+    rgba(238, 127, 127, 1) 50%,
+    rgba(247, 194, 194, 1) 76%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.faceLeft {
+  left: 17%;
+}
+
+.faceRight {
+  right: 17%;
+}
+
+.beard {
+  top: 47%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.beard > li:nth-of-type(odd) {
+  transform-origin: right;
+}
+
+.beard > li:nth-of-type(even) {
+  transform-origin: left;
+}
+
+.mouthA {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -1px;
+}
+@keyframes beardMove1 {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    transform: rotate(13deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  75% {
+    transform: rotate(7deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes beardMove2 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  25% {
+    transform: rotate(-7deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(-13deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes beardMove34 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-3deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes beardMove5 {
+  0% {
+    transform: rotate(-10deg);
+  }
+
+  25% {
+    transform: rotate(-7deg);
+  }
+
+  50% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(-13deg);
+  }
+
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes beardMove6 {
+  0% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    transform: rotate(13deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  75% {
+    transform: rotate(7deg);
+  }
+
+  100% {
+    transform: rotate(10deg);
+  }
+}
+
+.beard > li:first-of-type {
+  transform: rotate(10deg);
+  animation: beardMove1 1s infinite linear;
+}
+
+.beard > li:nth-of-type(2) {
+  transform: rotate(-10deg);
+  animation: beardMove2 1s infinite linear;
+}
+
+.beard > li:nth-of-type(3) {
+  animation: beardMove34 1s infinite linear;
+}
+
+.beard > li:nth-of-type(4) {
+  animation: beardMove34 1s infinite linear;
+}
+
+.beard > li:nth-of-type(5) {
+  transform: rotate(-10deg);
+  animation: beardMove5 1s infinite linear;
+}
+
+.beard > li:nth-of-type(6) {
+  animation: beardMove6 1s infinite linear;
+}
+html {
+  font-size: 10px;
+}
+@media (max-width: 500px) {
+  html {
+    font-size: 7px;
+  }
+}
+#show {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  right: 10px;
+  height: calc(100% - 540px);
+  padding: 10px;
+  font-size: 1.4rem;
+  overflow-y: auto;
+  border-bottom: 2px solid;
+  border: 2px solid #1facec;
+  background-color: white;
+  z-index: 1;
+}
+/*方法一：禁止移动端屏幕下拉*/
+body {
+  height: 100%;
+  overflow: hidden;
+}
+/* 将滚动条隐藏 */
+#show::-webkit-scrollbar {
+  display: none;
+}
+#below {
+  position: fixed;
+  /* 方法二：加边框，解决移动端代码展示区可以下拉屏幕的问题 */
+  /* border: 1px solid transparent; */
+  z-index: 1;
+}
+#btn {
+  position: fixed;
+  top: 555px;
+  right: 4rem;
+  height: calc(100% - 570px);
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 2;
+}
+#btn > button {
+  margin: 1rem;
+  width: 10rem;
+  height: 5rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #1facec;
+  font-size: 1.7rem;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 500px) {
+  #show {
+    height: calc(100% - 280px);
+    font-size: 1.8rem;
+  }
+  #btn {
+    top: 295px;
+    height: calc(100vh - 400px);
+  }
+  #btn > button {
+    font-size: 2.2rem;
+  }
+}
+
+
+/*# sourceMappingURL=test.82331ffe.css.map */
